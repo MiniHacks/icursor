@@ -7,10 +7,11 @@ const Home: NextPage = () => {
     const calibrate = () => {
         // inject calibration overlay script
         // inference on the frontend? suffer
-
+        console.log("here");
+        console.log(chrome.tabs);
     }
 
-    const overlay = () => {
+    const tracking = () => {
 
     }
 
@@ -24,10 +25,10 @@ const Home: NextPage = () => {
                 </Text>
                 </HStack>
                 
-                <Button>
+                <Button onClick={() => tracking()}>
                     Enable Eye Tracking
                 </Button>
-                <Button >
+                <Button onClick={() => calibrate()}>
                     Calibrate
                 </Button>
                 <Text 
