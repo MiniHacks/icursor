@@ -41,7 +41,9 @@
   },
   "permissions": [
     "tabs",
-    "scripting"
+    "scripting",
+    "activeTab",
+    "nativeMessaging"
   ],
   "host_permissions": [
     "https://*/*",
