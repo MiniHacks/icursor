@@ -6,8 +6,7 @@ export default function Document(): JSX.Element {
   return (
     <Html lang={"en"}>
       <Head />
-      
-      <body>
+      <body style={{ backgroundColor: "#0C0C0D" }}>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Main />
         <NextScript />
