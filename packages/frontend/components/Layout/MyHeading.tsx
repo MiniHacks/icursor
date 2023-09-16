@@ -5,12 +5,13 @@ const DEFAULT_DESC = "A Hackathon Project!";
 
 export type MyHeadingProps = {
   title?: string;
+  desc?: string;
 };
 
-const MyHeading = ({ title }: MyHeadingProps): JSX.Element => (
+const MyHeading = ({ title, desc }: MyHeadingProps): JSX.Element => (
   <Head>
     <title>{title || DEFAULT_TITLE}</title>
-    <meta name={"description"} content={DEFAULT_DESC} />
+    <meta name={"description"} content={desc || DEFAULT_DESC} />
     <link rel={"icon"} href={"/favicon.ico"} />
   </Head>
 );

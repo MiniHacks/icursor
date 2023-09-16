@@ -1,13 +1,17 @@
 import type { NextPage } from "next";
-import { Box, Heading } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import PageLayout from "../components/Layout/PageLayout";
+import Hero from "../components/Layout/Hero";
+import Header from "../components/Layout/Header";
 
 const Home: NextPage = () => {
   return (
-    <PageLayout title={"geese, by minihacks"}>
-      <Box px={[5, 10]}>
-        <Heading as={"h1"}>geese</Heading>
-      </Box>
+    <PageLayout title={"icursor"} desc={"Cursor that moves with the power of your eyes!"}>
+      <Flex h={"100%"}>
+        <Hero>
+          <Header logo="logo.png"/>
+        </Hero>
+      </Flex>
     </PageLayout>
   );
 };
