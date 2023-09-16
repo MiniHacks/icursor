@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <Flex h={"100%"}>
         <Hero>
           <Header logo="logo.png"/>
-        </Hero>
+          </Hero>
       </Flex>
     </PageLayout>
   );
