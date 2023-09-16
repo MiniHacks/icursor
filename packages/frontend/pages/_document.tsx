@@ -6,6 +6,7 @@ export default function Document(): JSX.Element {
   return (
     <Html lang={"en"}>
       <Head />
+      
       <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Main />

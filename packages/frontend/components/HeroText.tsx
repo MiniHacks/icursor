@@ -6,10 +6,11 @@ const HeroText = (): JSX.Element => (
 		direction="column"
 		gap="1rem"
 	>
-		<Heading fontSize="heading">Tagline here</Heading>
+		<Heading fontSize="96px">Tagline here.</Heading>
 		<Text 
 			fontSize="regular"
 			color="text"
+			mb="16px"
 		>
 			Insert an interesting description here. 
 			Look where you think, and act where you look. 
@@ -17,7 +18,7 @@ const HeroText = (): JSX.Element => (
 		</Text>
 		<Button
 			bg="button"
-			fontSize="regular"
+			fontSize="32px"
 			letterSpacing="2px"
 			padding="2rem"
 			width="fit-content"

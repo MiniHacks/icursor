@@ -1,4 +1,4 @@
-import { Flex, HStack, Heading, Text } from "@chakra-ui/react";
+import { Flex, HStack, Heading, Text, VStack } from "@chakra-ui/react";
 
 const MainText = (): JSX.Element => (
 	<Flex 
@@ -6,11 +6,12 @@ const MainText = (): JSX.Element => (
 		align="center"
 		direction="column"
 	>
+		<VStack m="40px" maxW="60%" textAlign="center">
 		<HStack>
 			<Heading fontSize="heading" marginRight="0.75rem">What Does it </Heading>
 			<Heading 
 				fontSize="heading"
-				background="linear-gradient(180deg, #FF7847 0%, #FF479E 100%)"
+				bg="linear-gradient(180deg, #FF7847 0%, #FF479E 100%)"
 				backgroundClip="text"
 			>
 					Do
@@ -24,6 +25,7 @@ const MainText = (): JSX.Element => (
 			Insert an interesting description here. 
 			We do so many cool things or whatever.
 		</Text>
+		</VStack>
 	</Flex>
 );
 export default MainText;

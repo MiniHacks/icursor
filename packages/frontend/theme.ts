@@ -3,8 +3,8 @@ import { extendTheme } from "@chakra-ui/react";
 export default extendTheme({
   initialColorMode: "light",
   fontSizes: {
-    heading: "5rem",
-    regular: "2rem"
+    heading: "80px",
+    regular: "36px"
   },
   colors: {
     background: "#0C0C0D",

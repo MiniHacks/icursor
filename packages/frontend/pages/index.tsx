@@ -13,7 +13,7 @@ import Bubble from "../components/Bubble";
 const Home: NextPage = () => {
   return (
     <PageLayout title={"icursor"} desc={"Cursor that moves with the power of your eyes!"}>
-      <Flex h="100%" minH="100%" bg="background" direction="column">
+      <Flex gap="24px" p="80px" h="100%" minH="100%" bg="background" direction="column">
         <Section marginBottom="4rem">
           <Image
             src="hero_bg.svg"
@@ -23,6 +23,7 @@ const Home: NextPage = () => {
             width={["400px", "500px", "900px", "900px", "900px"]}
             height={["400px", "500px", "600px", "800px", "900px"]}
             maxWidth={"900px"}
+            zIndex={0}
           />
           <Header logo="logo.png"/>
           <Flex flex="1" gap="1rem">
@@ -39,12 +40,14 @@ const Home: NextPage = () => {
             width={["400px", "500px", "900px", "900px", "900px"]}
             height={["400px", "500px", "600px", "800px", "900px"]}
             maxWidth={"900px"}
+            zIndex={0}
           />
           <MainText />
           <Flex
             flex="1"
             justifyContent="space-around"
             gap="2rem"
+            zIndex={1}
           >
             <Feature image="logo.png" title="cool feature 1"/>
             <Feature image="logo.png" title="cool feature 2"/>
@@ -60,6 +63,7 @@ const Home: NextPage = () => {
             width={["400px", "500px", "900px", "900px", "900px"]}
             height={["400px", "500px", "600px", "800px", "900px"]}
             maxWidth={"900px"}
+            zIndex={0}
           />
           <FooterText />
           <Flex
@@ -67,6 +71,7 @@ const Home: NextPage = () => {
             direction="column"
             gap="6rem"
             margin="4rem"
+            zIndex={1}
           >
             <Flex gap="1rem" align="center">
               <Bubble identifier="1" tooltip="" />

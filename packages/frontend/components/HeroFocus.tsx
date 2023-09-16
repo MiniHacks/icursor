@@ -7,6 +7,7 @@ const HeroFocus = (): JSX.Element => (
 		direction="column"
 		gap="2rem"
 		margin="0rem"
+		zIndex={1}
 	>
 		<Flex justifyContent="flex-start">
 			<Bubble identifier="1" tooltip="" />

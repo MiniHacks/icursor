@@ -15,7 +15,7 @@ const Feature = ({ image, title }: FeatureProps): JSX.Element => (
 		bg="#131314"
 		borderRadius="8px"
 		padding="4rem 3rem"
-		gap="1rem"
+		gap="64px"
 	>
 		<Image
 			src={image}
