@@ -1,6 +1,6 @@
 {
-  "name": "geese manifest title!",
-  "description": "template made by @minihacks/geese",
+  "name": "iCursor",
+  "description": "Move the cursor where you look.",
   "version": "1.2.0",
   "manifest_version": 3,
   "background": {
@@ -23,7 +23,7 @@
     }
   ],
   "action": {
-    "default_title": "geese action title!",
+    "default_title": "iCursor or something",
     "default_icon": {
       "32": "icons/icon-32.png",
       "72": "icons/icon-72.png",
