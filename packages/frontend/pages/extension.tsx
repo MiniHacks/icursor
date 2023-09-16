@@ -4,14 +4,11 @@ import PageLayout from "../components/Layout/PageLayout";
 
 const Home: NextPage = () => {
 
-    const calibrate = () => {
+    const handler = async (message: string) => {
         // inject calibration overlay script
         // inference on the frontend? suffer
-        console.log("here");
-        console.log(chrome.tabs);
-    }
-
-    const tracking = () => {
+        const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
+        const response = await chrome.tabs.sendMessage(tab.id || 0, message);
 
     }
 
@@ -25,10 +22,10 @@ const Home: NextPage = () => {
                 </Text>
                 </HStack>
                 
-                <Button onClick={() => tracking()}>
+                <Button onClick={() => handler("track")}>
                     Enable Eye Tracking
                 </Button>
-                <Button onClick={() => calibrate()}>
+                <Button onClick={() => handler("calibrate")}>
                     Calibrate
                 </Button>
                 <Text 

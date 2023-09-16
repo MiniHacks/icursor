@@ -1,4 +1,3 @@
-
 console.log("injection.js loaded");
 
 function calibrate(sender) {
@@ -8,7 +7,6 @@ function calibrate(sender) {
       const script = document.createElement('script');
       script.src = chrome.runtime.getURL('webgazer.min.js');
       document.head.appendChild(script);
-
 
       // webgazer.begin() // starting point here
     },
