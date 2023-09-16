@@ -9,6 +9,7 @@ export default extendTheme({
   colors: {
     background: "#0C0C0D",
     button: "#FF7847",
-    text: "rgba(255, 255, 255, 0.60)"
+    text: "rgba(255, 255, 255, 0.60)",
+    orange: "#FF7847",
   }
 });
