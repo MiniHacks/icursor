@@ -6,7 +6,11 @@ export type HeaderProps = {
 };
 
 const Header = ({ logo }: HeaderProps): JSX.Element => (
-	<Flex flex="1" justifyContent={"flex-start"}>
+	<Flex 
+		flex="1" 
+		justifyContent="flex-start"
+		marginBottom="2rem"
+	>
 		<Image       
 			src={logo}
 			boxSize='150px'
