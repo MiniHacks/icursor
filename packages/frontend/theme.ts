@@ -7,8 +7,8 @@ export default extendTheme({
     regular: `'Inter', sans-serif`,
   },
   fontSizes: {
-    heading: "80px",
-    regular: "36px"
+    heading: "64px",
+    regular: "28px"
   },
   colors: {
     background: "#0C0C0D",

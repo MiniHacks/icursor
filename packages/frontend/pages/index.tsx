@@ -73,11 +73,11 @@ const Home: NextPage = () => {
             margin="4rem"
             zIndex={1}
           >
-            <Flex gap="1rem" align="center">
+            <Flex gap="2rem" align="center">
               <Bubble identifier="1" tooltip="" />
               <Text fontSize="regular" color="text">Cool explanation here, snap effect.</Text>
             </Flex>
-            <Flex gap="1rem" align="center">
+            <Flex gap="2rem" align="center">
               <Bubble identifier="2" tooltip="" />
               <Text fontSize="regular" color="text">Cool explanation here, snap effect.</Text>
             </Flex>

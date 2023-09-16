@@ -1,11 +1,11 @@
-import { Flex, HStack, Heading, Text } from "@chakra-ui/react";
+import { Flex, HStack, Heading, Text, VStack } from "@chakra-ui/react";
 
 const FooterText = (): JSX.Element => (
 	<Flex
 		direction="column"
 		zIndex={1}
 	>
-		<HStack>
+		<HStack marginBottom="0.75rem">
 			<Heading fontSize="heading" marginRight="0.75rem">How Does it</Heading>
 			<Heading 
 				fontSize="heading"
@@ -16,12 +16,15 @@ const FooterText = (): JSX.Element => (
 			</Heading>
 			<Heading fontSize="heading">?</Heading>
 		</HStack>
-		<Text
-			fontSize="regular"
-			color="text"
-		>
+		<VStack fontSize="regular"
+			color="text" alignItems="start">
+		<Text>
 			Insert an interesting description here. Eye tracker model go brrrr.
 		</Text>
+		<Text>
+			Mediapipe + ??? = high latency profits for high quality guys
+		</Text>
+		</VStack>
 	</Flex>
 );
 export default FooterText;

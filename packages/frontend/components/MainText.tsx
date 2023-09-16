@@ -23,7 +23,7 @@ const MainText = (): JSX.Element => (
 			color="text"
 		>
 			Insert an interesting description here. 
-			We do so many cool things or whatever.
+			We do so many cool things. This is a description. This is a description.
 		</Text>
 		</VStack>
 	</Flex>
