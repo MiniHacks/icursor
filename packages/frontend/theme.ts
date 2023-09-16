@@ -1,7 +1,7 @@
 import { extendTheme } from "@chakra-ui/react";
 
 export default extendTheme({
-  initialColorMode: "light",
+  initialColorMode: "dark",
   fonts: {
     heading: `'Plus Jakarta Sans', sans-serif`,
     regular: `'Inter', sans-serif`,
