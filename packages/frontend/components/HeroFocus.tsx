@@ -6,17 +6,16 @@ const HeroFocus = (): JSX.Element => (
 		flex="1" 
 		direction="column"
 		gap="2rem"
-		margin="0rem"
 		zIndex={1}
 	>
 		<Flex justifyContent="flex-start">
 			<Bubble identifier="1" tooltip="" />
 		</Flex>
-		<Flex justifyContent="flex-end" marginRight="5rem">
-			<Bubble identifier="1" tooltip="" />
+		<Flex justifyContent="flex-end" marginRight="0rem">
+			<Bubble identifier="2" tooltip="" />
 		</Flex>
 		<Flex justifyContent="flex-start">
-			<Bubble identifier="1" tooltip="" />
+			<Bubble identifier="3" tooltip="" />
 		</Flex>
 	</Flex>
 );
