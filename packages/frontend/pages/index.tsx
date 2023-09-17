@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import type { NextPage } from "next";
 import { Flex, Image, Text } from "@chakra-ui/react";
 import PageLayout from "../components/Layout/PageLayout";
@@ -11,10 +12,14 @@ import FooterText from "../components/FooterText";
 import Bubble from "../components/Bubble";
 
 const Home: NextPage = () => {
+
+  const whatRef = useRef<HTMLDivElement | null>(null);
+  const howRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <PageLayout title={"icursor"} desc={"Cursor that moves with the power of your eyes!"}>
       <Flex gap="24px" py="24px" px="120px" h="100%" minH="100%" bg="background" direction="column">
-        <Section marginBottom="4rem">
+        <Section innerRef={undefined} marginBottom="4rem">
           <Image 
             zIndex="2"
             opacity="0.9"
@@ -35,13 +40,13 @@ const Home: NextPage = () => {
             maxWidth={"900px"}
             zIndex={0}
           />
-          <Header logo="logo.png"/>
+          <Header logo="logo.png" what={whatRef} how={howRef} />
           <Flex flex="1">
             <HeroText />
             <HeroFocus />
           </Flex>
         </Section>
-        <Section id="what" marginBottom="4rem">
+        <Section innerRef={whatRef} id="what" marginBottom="4rem">
           <Image
             src="main_bg.svg"
             position="absolute"
@@ -64,7 +69,7 @@ const Home: NextPage = () => {
             <Feature image="logo.png" title="Learn Vim anyway!"/>
           </Flex>
         </Section>
-        <Section id="how">
+        <Section innerRef={howRef} id="how">
           <Image
             src="footer_bg.svg"
             position="absolute"

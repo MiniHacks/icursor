@@ -1,16 +1,26 @@
 import { Flex, Link } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
+import { MutableRefObject } from "react";
 
 export type HeaderProps = {
 	logo?: string;
+	what?: MutableRefObject<HTMLDivElement | null>;
+	how?: MutableRefObject<HTMLDivElement | null>;
 };
 
 interface CustomLinkProps {
-	href: string;
+	href?: string;
+	sectionRef: MutableRefObject<HTMLDivElement | null> | undefined;
 	children: React.ReactNode;
 }
 
-const CustomLink: React.FC<CustomLinkProps> = ({ href, children }) => {
+const CustomLink: React.FC<CustomLinkProps> = ({ href, sectionRef, children }) => {
+	const scrollTo = (ref: MutableRefObject<HTMLDivElement | null> | undefined) => {
+		if (ref && ref.current) {
+			ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+		}
+	}
+	
 	return (
 	  <Link
 		fontWeight="semibold"
@@ -22,6 +32,7 @@ const CustomLink: React.FC<CustomLinkProps> = ({ href, children }) => {
 		borderRadius="8px"
 		textDecoration='none'
 		href={href}
+		onClick={() => scrollTo(sectionRef)}
 		_hover={{
 		  color: "orange"
 		}}
@@ -32,7 +43,7 @@ const CustomLink: React.FC<CustomLinkProps> = ({ href, children }) => {
   };
   
 
-const Header = ({ logo }: HeaderProps): JSX.Element => (
+const Header = ({ logo, what, how }: HeaderProps): JSX.Element => (
 	<Flex marginBottom="94px">
 	<Link zIndex="100" href="/">
 	<Image       
@@ -59,9 +70,9 @@ const Header = ({ logo }: HeaderProps): JSX.Element => (
 		gap="96px"
 		opacity="0.8"
 	>	
-		<CustomLink href='#what'>What it Does</CustomLink>
-		<CustomLink href='#how'>How it Works</CustomLink>
-		<CustomLink href=''>🪿 🪿 🪿</CustomLink>
+		<CustomLink sectionRef={what}>What it Does</CustomLink>
+		<CustomLink sectionRef={how}>How it Works</CustomLink>
+		<CustomLink href="" sectionRef={undefined}>🪿 🪿 🪿</CustomLink>
 	</Flex>
 	</Flex>
 );

@@ -1,9 +1,9 @@
-import { Flex, HStack, Heading, Text, VStack, SlideFade, useDisclosure } from "@chakra-ui/react";
+import { Flex, HStack, Heading, Text, VStack, SlideFade } from "@chakra-ui/react";
 import { useState, useRef, useEffect } from "react";
 
 const MainText = (): JSX.Element => {
   const [inView, setInView] = useState(false);
-  const boxRef = useRef<HTMLDivElement | null>(null);
+  const stackRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const options = {
@@ -17,15 +17,15 @@ const MainText = (): JSX.Element => {
         if (entry.isIntersecting) {
           setInView(true);
 
-          if (boxRef.current) {
-            observer.unobserve(boxRef.current);
+          if (stackRef.current) {
+            observer.unobserve(stackRef.current);
           }
         }
       });
     }, options);
 
-    if (boxRef.current) {
-      observer.observe(boxRef.current);
+    if (stackRef.current) {
+      observer.observe(stackRef.current);
     }
 
     return () => {
@@ -41,7 +41,7 @@ const MainText = (): JSX.Element => {
 		>
 			<VStack m="40px" maxW="60%" textAlign="center" gap="24px">
 				<SlideFade in={inView} offsetY={30} delay={0.5}>
-					<HStack ref={boxRef}>
+					<HStack ref={stackRef}>
 						<Heading fontSize="heading" marginRight="0.75rem">What Does it </Heading>
 						<Heading 
 							fontSize="heading"
