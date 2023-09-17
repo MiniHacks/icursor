@@ -60,7 +60,7 @@ const FooterText = (): JSX.Element => {
 							the rock of fine-tuning.
 						</Text>
 						<Text>
-							(Mediapipe + WebGrazer + Saliency = yay?)
+							(Mediapipe + WebGazer + Saliency = yay?)
 						</Text>
 				</VStack>
 			</SlideFade>

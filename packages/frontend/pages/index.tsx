@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   const howRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <PageLayout title={"icursor"} desc={"Cursor that moves with the power of your eyes!"}>
+    <PageLayout title={"iCursor"} desc={"Cursor that moves with the power of your eyes!"}>
       <Flex gap="24px" py="24px" px="120px" h="100%" minH="100%" bg="background" direction="column">
         <Section innerRef={undefined} marginBottom="4rem">
           <Image 
