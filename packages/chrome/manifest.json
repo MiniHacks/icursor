@@ -43,7 +43,8 @@
     "tabs",
     "scripting",
     "activeTab",
-    "nativeMessaging"
+    "nativeMessaging",
+    "storage"
   ],
   "host_permissions": [
     "https://*/*",

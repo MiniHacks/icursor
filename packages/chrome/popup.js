@@ -2,17 +2,11 @@ const predictGaze = document.getElementById('predictGaze');
 const calibrate = document.getElementById('calibrate');
 
 predictGaze.addEventListener('click', async () => {
-    const state = localStorage.getItem("tracking");
+    const state = (await chrome.storage.sync.get(["tracking"])).tracking
+    console.log(state);
     predictGaze.value = state == 'true' ? 'false' : 'true';
     predictGaze.textContent = predictGaze.value == 'true' ? "Disable" : "Enable";
-    localStorage.setItem("tracking", predictGaze.value);
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true});
-    const response = await chrome.tabs.sendMessage(
-        tab.id,
-        {action: predictGaze.value == 'true' ? 'enableGaze' : 'disableGaze'},
-        (response) => {
-        }
-    );
+    await chrome.storage.sync.set({ "tracking": predictGaze.value });
 });
 
 calibrate.addEventListener('click', async () => {
@@ -25,14 +19,14 @@ calibrate.addEventListener('click', async () => {
     );
 });
 
-window.addEventListener("load", () => {
-    const isTracking = localStorage.getItem("tracking");
+window.addEventListener("load", async () => {
+    const isTracking = await chrome.storage.sync.get(["tracking"]);
 
     if (isTracking !== null) {
-        predictGaze.textContent = isTracking == 'true' ? "Disable" : "Enable";
-        predictGaze.value = isTracking
+        predictGaze.textContent = isTracking.tracking == 'true' ? "Disable" : "Enable";
+        predictGaze.value = isTracking.tracking
     } else {
-        localStorage.setItem("tracking", 'false');
+        await chrome.storage.sync.set({ "tracking": "false" });
         predictGaze.textContent = "Enable";
         predictGaze.value = 'false'
     }

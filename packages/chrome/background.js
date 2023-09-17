@@ -1,29 +1,18 @@
-// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-//     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-//       chrome.scripting.executeScript({
-//         target : {tabId : tabs[0].id},
-//         files : ["injection.js"]
-//       }).then(
-//         () => console.log("script injected!")
-//       );
-//     });
-//   });
-
-  // chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  //   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-  //     chrome.scripting.executeScript({
-  //       target : {tabId : tabs[0].id},
-  //       files : ["./injection/injection.js"]
-  //     }, () => {
-  //       chrome.scripting.executeScript({
-  //         target : {tabId : tabs[0].id},
-  //         args: [message],
-  //         func: (...args) => messageHandler(message)
-  //       })
-  //     }).then(
-  //       () => console.log("script injected!")
-  //     );
-  //   });
-  // });
-
-
+chrome.storage.onChanged.addListener((changes, namespaces) => {
+  chrome.tabs.query({}, (tabs) => {
+      tabs.forEach((tab) => {
+          message = {
+              action: changes.tracking.newValue == 'true' ? 'enableGaze' : 'disableGaze',
+              tabId: tab.id
+          }
+          console.log(tab.id);
+          chrome.scripting.executeScript({target: {tabId: tab.id}, files: ['./injection/injection.js']}, () => {
+            chrome.scripting.executeScript({
+              target: {tabId: tab.id},
+              args: [message],
+              func: (...args) => handleMessage(...args),
+            });
+          });
+      });
+  });
+})
