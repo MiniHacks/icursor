@@ -72,7 +72,7 @@ const Header = ({ logo, what, how }: HeaderProps): JSX.Element => (
 	>	
 		<CustomLink sectionRef={what}>What it Does</CustomLink>
 		<CustomLink sectionRef={how}>How it Works</CustomLink>
-		<CustomLink href="" sectionRef={undefined}>🪿 🪿 🪿</CustomLink>
+		<CustomLink href="https://github.com/minihacks/" sectionRef={undefined}>🪿 🪿 🪿</CustomLink>
 	</Flex>
 	</Flex>
 );

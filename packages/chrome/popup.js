@@ -4,7 +4,7 @@ const calibrate = document.getElementById('calibrate');
 predictGaze.addEventListener('click', async () => {
     const state = (await chrome.storage.sync.get(["tracking"])).tracking
     predictGaze.value = state == 'true' ? 'false' : 'true';
-    predictGaze.textContent = predictGaze.value == 'true' ? "Disable" : "Enable";
+    predictGaze.textContent = predictGaze.value == 'true' ? "Disable Eye Tracking" : "Enable Eye Tracking";
     await chrome.storage.sync.set({ "tracking": predictGaze.value });
 });
 
@@ -19,7 +19,7 @@ window.addEventListener("load", async () => {
     const isCalibrated = await chrome.storage.sync.get(["calibrate"]);
 
     if (isTracking !== null) {
-        predictGaze.textContent = isTracking.tracking == 'true' ? "Disable" : "Enable";
+        predictGaze.textContent = isTracking.tracking == 'true' ? "Disable Eye Tracking" : "Enable Eye Tracking";
         predictGaze.value = isTracking.tracking
     } else {
         await chrome.storage.sync.set({ "tracking": "false" });

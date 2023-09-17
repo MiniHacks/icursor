@@ -41,7 +41,7 @@ const Home: NextPage = () => {
             zIndex={0}
           />
           <Header logo="logo.png" what={whatRef} how={howRef} />
-          <Flex flex="1">
+          <Flex zIndex="1" flex="1">
             <HeroText />
             <HeroFocus />
           </Flex>
