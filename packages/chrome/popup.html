@@ -10,31 +10,88 @@
     <title>Geese</title>
 </head>
 <body>
-    <div>
-        <div>
-        <image boxSize="24px" src="logo.png" />
-        <div as="b" color="white">
-            iCursor
+        <div class="container">
+            <img style="width: 120px; margin-bottom: 24px" src="./icons/logo.png" />
+            
+            <div style="margin: 16px 0 24px 0">
+                <button class="tracking" id="predictGaze" value=false>
+                    Enable Eye Tracking
+                </button>
+            </div>
+            
+            <div>
+                <button class="calibration" id="calibrate" value=false>
+                    Calibrate
+                </button>
+            </div>
+            <div style="padding: 1rem 0 1rem 0; font-size: small; color: rgb(165, 161, 161); opacity: 0.6; align-self: flex-start;">
+                made with 🪿 from minihacks
+            </div>
+            <img style="z-index: -1; position: absolute; bottom: 0; right: 0;" src="./icons/bokeh.svg" />
         </div>
-        </div>
-        
-        <button id="predictGaze" value=false>
-            Enable
-        </button>
-        <button id="calibrate" value=false>
-            Calibrate
-        </button>
-        <div 
-            paddingX="1rem"
-            fontSize="2xs"
-            color="white"
-            opacity="60%"
-            alignSelf="start"
-            >
-            made with 🪿 from minihacks
-        </div>
-    </div>
-    <script src="popup.js"></script>
 </body>
+<style>
+    @font-face {
+        font-family: "plusJakartaSans";
+        src: url("../frontend/public/fonts/PlusJakartaSans.ttf");
+    }
+
+    body {
+        width: 240px; 
+        height: 240px;
+        min-height: 100%;
+		background: #1c1c1e;
+		backdrop-filter: blur(10px);
+		opacity: 80%;
+        color: white;
+        text-align: center;
+    }
+    button {
+        font-family: "plusJakartaSans", sans-serif;
+        font-weight: 500;
+        background: #39393e;
+        color: inherit;
+        font-size: 16px;
+        border: 2px solid;
+        border-radius: 8px;
+        cursor: pointer;
+        outline: inherit;
+		padding: 8px 16px;
+    }
+
+    .tracking:hover {
+        color: #FF7847;
+        background: white;
+    }
+
+    .tracking {
+        transition: ease 0.5s;
+		background: #FF7847;
+		color: white;
+    }
+
+    .calibration:hover {
+        border-color: white;
+        background: #FF7847;
+        color: white;
+    }
+
+    .calibration {
+        transition: ease 0.5s;
+        background-color: #262628;
+		color: #FF7847;
+        border-color: #37363A;
+        margin-bottom: 80px;
+    }
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100%;
+        gap: 1rem; 
+        padding: 1.5rem;
+    }
+</style>
+<script src="popup.js"></script>
 
 </html>
