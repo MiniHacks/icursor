@@ -1,25 +1,39 @@
-console.log("popup.js reached")
+const predictGaze = document.getElementById('predictGaze');
+const calibrate = document.getElementById('calibrate');
 
-document.getElementById('predictGaze').addEventListener('click', async () => {
-    console.log("predict gaze clicked")
-    document.getElementById('predictGaze').value = !document.getElementById('predictGaze').value;
-    // FIXME
-    document.getElementById('predictGaze').textContent = 
-        document.getElementById('predictGaze').value ? "disable" : "enable";
+predictGaze.addEventListener('click', async () => {
+    const state = localStorage.getItem("tracking");
+    predictGaze.value = state == 'true' ? 'false' : 'true';
+    predictGaze.textContent = predictGaze.value == 'true' ? "Disable" : "Enable";
+    localStorage.setItem("tracking", predictGaze.value);
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true});
     const response = await chrome.tabs.sendMessage(
         tab.id,
-        {action: document.getElementById('predictGaze').value ? 'enableGaze' : 'disableGaze'},
+        {action: predictGaze.value == 'true' ? 'enableGaze' : 'disableGaze'},
         (response) => {
-            console.log(response);
         }
     );
 });
 
-// not being used currently
-document.getElementById('calibrate').addEventListener('click', () => {
-    console.log("calibrate clicked")
-    chrome.runtime.sendMessage({
-        action: 'calibrate', 
-    });
+calibrate.addEventListener('click', async () => {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true});
+    const response = await chrome.tabs.sendMessage(
+        tab.id,
+        {action: 'calibrate'},
+        (response) => {
+        }
+    );
+});
+
+window.addEventListener("load", () => {
+    const isTracking = localStorage.getItem("tracking");
+
+    if (isTracking !== null) {
+        predictGaze.textContent = isTracking == 'true' ? "Disable" : "Enable";
+        predictGaze.value = isTracking
+    } else {
+        localStorage.setItem("tracking", 'false');
+        predictGaze.textContent = "Enable";
+        predictGaze.value = 'false'
+    }
 });

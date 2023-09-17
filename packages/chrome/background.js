@@ -1,13 +1,13 @@
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.scripting.executeScript({
-        target : {tabId : tabs[0].id},
-        files : ["injection.js"]
-      }).then(
-        () => console.log("script injected!")
-      );
-    });
-  });
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+//     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+//       chrome.scripting.executeScript({
+//         target : {tabId : tabs[0].id},
+//         files : ["injection.js"]
+//       }).then(
+//         () => console.log("script injected!")
+//       );
+//     });
+//   });
 
   // chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   //   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {

@@ -38,6 +38,7 @@ function disable(sender) {
 
 function handleMessage(message, sender, response)  {
   console.log("received message: ", message);
+  response({status: 'ok'});
 }
 
 chrome.runtime.onMessage.addListener(handleMessage);
