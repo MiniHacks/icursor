@@ -1,3 +1,25 @@
+
+console.log("injection.js loaded");
+
+(async () => { 
+    console.log("[injection] importing streaming")
+    // ort = onnx runtime
+    // let scriptt = document.createElement('script');
+    const ortcommon = await import('http://localhost:3000/vendor/ort-common.min.js'); 
+    const ortweb = await import('http://localhost:3000/vendor/ort-web.min.js'); 
+
+    setTimeout(() => {console.log(":3", window, window.ort, ortweb); initializeStreaming(window.ort);}, 5000);
+
+    let url = chrome.runtime.getURL("injection/streaming.js");
+    let x = await import(url);
+    let { initializeStreaming } = x;
+
+        
+})();
+
+// chrome.action.onClicked.addListener(async (tab) => {
+    
+// });
 console.log("injection.js loaded");
 
 function calibrate(sender) {
