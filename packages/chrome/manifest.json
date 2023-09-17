@@ -3,9 +3,6 @@
   "description": "Move the cursor where you look.",
   "version": "1.2.0",
   "manifest_version": 3,
-  "background": {
-    "service_worker": "background.js"
-  },
   "omnibox": {
     "keyword": "gg"
   },
@@ -22,6 +19,10 @@
       ]
     }
   ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval'; child-src 'self';"
+  },
   "action": {
     "default_title": "iCursor or something",
     "default_icon": {
@@ -46,7 +47,7 @@
     "nativeMessaging"
   ],
   "host_permissions": [
-    "https://*/*",
+    "https://*/*",  
     "http://*/*"
   ]
 }
