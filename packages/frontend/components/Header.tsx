@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, Link } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 
 export type HeaderProps = {
@@ -8,14 +8,20 @@ export type HeaderProps = {
 const Header = ({ logo }: HeaderProps): JSX.Element => (
 	<Flex 
 		flex="1" 
-		justifyContent="flex-start"
-		marginBottom="2rem"
+		justifyContent="space-between"
+		alignItems="center"
+		marginBottom="94px"
+		zIndex="12"
 	>
 		<Image       
 			src={logo}
-			boxSize='150px'
+			boxSize='100px'
 			alt="icursor logo"
 		/>
+		<Link> wow </Link>
+		<Link> wow </Link>
+		<Link> wow </Link>
+		<Link> wow </Link>
 	</Flex>
 );
 export default Header;

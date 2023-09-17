@@ -13,7 +13,7 @@ import Bubble from "../components/Bubble";
 const Home: NextPage = () => {
   return (
     <PageLayout title={"icursor"} desc={"Cursor that moves with the power of your eyes!"}>
-      <Flex gap="24px" p="80px" h="100%" minH="100%" bg="background" direction="column">
+      <Flex gap="24px" py="24px" px="120px" h="100%" minH="100%" bg="background" direction="column">
         <Section marginBottom="4rem">
           <Image
             src="hero_bg.svg"

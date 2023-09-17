@@ -1,35 +1,57 @@
-import { Button, Flex, Heading, Text } from "@chakra-ui/react";
+import { Button, Flex, HStack, Heading, Text } from "@chakra-ui/react";
 
 const HeroText = (): JSX.Element => (
 	<Flex 
 		direction="column"
-		gap="1rem"
 		marginRight="10rem"
-		maxWidth="50vw"
+		maxWidth="40vw"
+		gap="32px"
 	>
-		<Heading fontSize="80px">Tagline here.</Heading>
+		<Heading fontSize="72px" lineHeight="90%"> Vim for Your Eyes</Heading>
 		<Text 
 			fontSize="regular"
 			color="text"
-			mb="16px"
 		>
-			Insert an interesting description here. 
-			Look where you think, and act where you look. 
-			Vim for your eyes.
+			Chrome extension for gaze prediction with saliency mappings. 
+			Look where you think; act where you look. 
+			Move with just a glance and a webcam.
 		</Text>
-		<Button
-			bg="button"
-			fontSize="regular"
-			color="white"
-			padding="2rem"
-			width="fit-content"
-			_hover={{
-				bg: "white",
-				color: "button"
-			}}
-		>
-			Download
-		</Button>
+		
+		<HStack w="fit-content" zIndex="10">
+			<Button
+				bg="button"
+				fontSize="18px"
+				bgGradient="linear(to-r, #FF7847, #FF479E)"
+				color="white"
+				padding="1rem"
+				marginRight="12px"
+				width="fit-content"
+				_hover={{
+					bg: "white",
+					color: "button"
+				}}
+			>
+				Download
+			</Button>
+			<Button
+				bg="button"
+				fontSize="18px"
+				variant="outline"
+				bg="backgroundLighter"
+				color="#FF7847"
+				padding="1rem"
+				borderColor="#37363A"
+				width="fit-content"
+				_hover={{
+					bg: "orange",
+					color: "white",
+					borderColor: "white",
+				}}
+			>
+				Github
+			</Button>
+		</HStack>
+		
 	</Flex>
 );
 export default HeroText;

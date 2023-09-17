@@ -8,10 +8,11 @@ export default extendTheme({
   },
   fontSizes: {
     heading: "64px",
-    regular: "28px"
+    regular: "20px"
   },
   colors: {
     background: "#0C0C0D",
+    backgroundLighter: "#262628",
     button: "#FF7847",
     text: "rgba(255, 255, 255, 0.60)",
     orange: "#FF7847",
