@@ -22,6 +22,29 @@
       ]
     }
   ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "injection/streaming.js",
+        "vendor/ort.wasm.min.js",
+        "vendor/ort.webgl.min.js",
+        "vendor/ort.webgpu.min.js",
+        "vendor/ort-wasm-simd.jsep.wasm",
+        "vendor/ort-web.min.js",
+        "vendor/ort-common.min.js",
+        "vendor/saliency/model.onnx"
+      ]
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [ "*.js" ]
+    }
+  ],
   "action": {
     "default_title": "iCursor or something",
     "default_icon": {
@@ -31,7 +54,6 @@
       "512": "icons/icon.png"
     },
     "default_popup": "popup.html"
-    
   },
   "icons": {
     "32": "icons/icon.png",
