@@ -9,13 +9,13 @@ const HeroFocus = (): JSX.Element => (
 		zIndex={1}
 	>
 		<Flex justifyContent="flex-start">
-			<Bubble identifier="1" tooltip="" />
+			<Bubble p="64px" identifier="🕊️" tooltip="" />
 		</Flex>
 		<Flex justifyContent="flex-end" marginRight="0rem">
-			<Bubble identifier="2" tooltip="" />
+			<Bubble identifier="🐓" tooltip="" />
 		</Flex>
-		<Flex justifyContent="flex-start">
-			<Bubble identifier="3" tooltip="" />
+		<Flex justifyContent="center">
+			<Bubble identifier="🦆" tooltip="" />
 		</Flex>
 	</Flex>
 );

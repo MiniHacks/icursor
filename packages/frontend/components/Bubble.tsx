@@ -11,11 +11,15 @@ const Bubble = ({ identifier, tooltop, ...props }: BubbleProps): JSX.Element => 
 		transition='ease 0.5s'
 		cursor="pointer"
 		size="100px" 
-		bg='background' 
 		color='white'
-		border='2px solid white'
+		border="2px solid rgba(255, 255, 255, 0.40)"
+		borderRadius="16px"
+		bg="rgba(47, 47, 51, 0.2)"
+		backdropBlur="10px"
+		boxShadow="0 0 10px rgba(0, 0, 0, 0.3)"
+		opacity="0.8"
 		_hover={{
-			bg: "white",
+			background: "rgba(47, 47, 51, 0.5)",
 			color: "button",
 		}}
 		{...props}

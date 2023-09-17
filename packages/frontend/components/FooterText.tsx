@@ -5,7 +5,7 @@ const FooterText = (): JSX.Element => (
 		direction="column"
 		zIndex={1}
 	>
-		<HStack marginBottom="0.75rem">
+		<HStack marginBottom="24px">
 			<Heading fontSize="heading" marginRight="0.75rem">How Does it</Heading>
 			<Heading 
 				fontSize="heading"
@@ -19,10 +19,11 @@ const FooterText = (): JSX.Element => (
 		<VStack fontSize="regular"
 			color="text" alignItems="start">
 		<Text>
-			Insert an interesting description here. Eye tracker model go brrrr.
+			By sacrificing our souls to the gods of developing PhD projects and to
+			the rock of fine-tuning.
 		</Text>
 		<Text>
-			Mediapipe + ??? = high latency profits for high quality guys
+			(Mediapipe + WebGrazer + Saliency = yay?)
 		</Text>
 		</VStack>
 	</Flex>

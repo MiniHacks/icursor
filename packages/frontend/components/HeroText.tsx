@@ -6,8 +6,15 @@ const HeroText = (): JSX.Element => (
 		marginRight="10rem"
 		maxWidth="40vw"
 		gap="32px"
+		p="48px"
+		borderRadius="16px"
+		bg="rgba(47, 47, 51, 0.2)"
+		backdropBlur="10px"
+		boxShadow="0 0 10px rgba(0, 0, 0, 0.3)"
+		opacity="0.8"
+		zIndex="2"
 	>
-		<Heading fontSize="72px" lineHeight="90%"> Vim for Your Eyes</Heading>
+		<Heading fontSize="72px" lineHeight="94%"> V*m for your eyes.</Heading>
 		<Text 
 			fontSize="regular"
 			color="text"
@@ -48,7 +55,7 @@ const HeroText = (): JSX.Element => (
 					borderColor: "white",
 				}}
 			>
-				Github
+				Github Repository
 			</Button>
 		</HStack>
 		

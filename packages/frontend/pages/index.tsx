@@ -15,6 +15,16 @@ const Home: NextPage = () => {
     <PageLayout title={"icursor"} desc={"Cursor that moves with the power of your eyes!"}>
       <Flex gap="24px" py="24px" px="120px" h="100%" minH="100%" bg="background" direction="column">
         <Section marginBottom="4rem">
+          <Image 
+            zIndex="2"
+            opacity="0.9"
+            left="1000px"
+            top="350px"
+            src="cursor.svg"
+            boxSize="100px"
+            stroke="white"
+            position="absolute"
+          />
           <Image
             src="hero_bg.svg"
             position="absolute"
@@ -31,7 +41,7 @@ const Home: NextPage = () => {
             <HeroFocus />
           </Flex>
         </Section>
-        <Section marginBottom="4rem">
+        <Section id="what" marginBottom="4rem">
           <Image
             src="main_bg.svg"
             position="absolute"
@@ -49,12 +59,12 @@ const Home: NextPage = () => {
             gap="2rem"
             zIndex={1}
           >
-            <Feature image="logo.png" title="cool feature 1"/>
-            <Feature image="logo.png" title="cool feature 2"/>
-            <Feature image="logo.png" title="cool feature 3"/>
+            <Feature image="logo.png" title="Read with your nose!"/>
+            <Feature image="logo.png" title="Stop being a noob!"/>
+            <Feature image="logo.png" title="Learn Vim anyway!"/>
           </Flex>
         </Section>
-        <Section>
+        <Section id="how">
           <Image
             src="footer_bg.svg"
             position="absolute"
@@ -74,11 +84,11 @@ const Home: NextPage = () => {
             zIndex={1}
           >
             <Flex gap="2rem" align="center">
-              <Bubble identifier="1" tooltip="" />
+              <Bubble identifier="🦃" tooltip="" />
               <Text fontSize="regular" color="text">Cool explanation here, snap effect.</Text>
             </Flex>
             <Flex gap="2rem" align="center">
-              <Bubble identifier="2" tooltip="" />
+              <Bubble identifier="🦢" tooltip="" />
               <Text fontSize="regular" color="text">Cool explanation here, snap effect.</Text>
             </Flex>
           </Flex>
