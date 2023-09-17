@@ -2,6 +2,7 @@ console.log("injection.js loaded");
 
 function calibrate(tabId) {
   window.onscroll = function () { window.scrollTo(0, 0); };
+  document.body.classList.add("overlay-div");
   const overlayDiv1 = document.createElement("div");
   overlayDiv1.className = "overlay-div";
   document.body.appendChild(overlayDiv1);
@@ -9,7 +10,7 @@ function calibrate(tabId) {
   function createSquare(className) {
     const square = document.createElement("div");
     square.className = "corner-square " + className;
-    document.body.appendChild(square);
+    document.body.insertBefore(square, document.body.firstChild);
   }
 
   // Create squares in all four corners
@@ -22,7 +23,7 @@ function calibrate(tabId) {
   createSquare("middle-bottom");
   createSquare("middle-left");
   createSquare("middle-right");
-  
+
   // window.onscroll = null; // RESETs SCROLLING
 }
 
