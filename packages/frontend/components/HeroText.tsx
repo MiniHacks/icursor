@@ -14,7 +14,7 @@ const HeroText = (): JSX.Element => (
 		opacity="0.8"
 		zIndex="2"
 	>
-		<Heading fontSize="72px" lineHeight="94%"> V*m for your eyes.</Heading>
+		<Heading fontSize="72px" lineHeight="94%"> Vim for your eyes.</Heading>
 		<Text 
 			fontSize="regular"
 			color="text"

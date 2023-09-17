@@ -56,11 +56,11 @@ const FooterText = (): JSX.Element => {
 				<VStack fontSize="regular"
 					color="text" alignItems="start">
 						<Text>
-							By sacrificing our souls to the gods of developing PhD projects and to
-							the rock of fine-tuning.
+							Taking laptop webcam footage, we map where a user is
+							looking to their mouse using gaze prediction.
 						</Text>
 						<Text>
-							(Mediapipe + WebGazer + Saliency = yay?)
+							(Mediapipe + Transalnet + WebGazer = yay?)
 						</Text>
 				</VStack>
 			</SlideFade>

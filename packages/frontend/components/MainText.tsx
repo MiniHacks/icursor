@@ -57,6 +57,7 @@ const MainText = (): JSX.Element => {
 					<Text
 						fontSize="regular"
 						color="text"
+						zIndex="10"
 					>
 						This bad boy can fit so many face landmarks so that you can move freely with less clicks.
 						Scroll with your nose; move with your eyes. Procrastinate like never before!

@@ -64,9 +64,9 @@ const Home: NextPage = () => {
             gap="2rem"
             zIndex={1}
           >
-            <Feature image="logo.png" title="Read with your nose!"/>
-            <Feature image="logo.png" title="Stop being a noob!"/>
-            <Feature image="logo.png" title="Learn Vim anyway!"/>
+            <Feature image="read.png" title="Read with your nose!"/>
+            <Feature image="target.png" title="Be suspiciously good at games!"/>
+            <Feature image="totallyNotVim.png" title="Learn Vim anyway!"/>
           </Flex>
         </Section>
         <Section innerRef={howRef} id="how">
@@ -90,11 +90,11 @@ const Home: NextPage = () => {
           >
             <Flex gap="2rem" align="center">
               <Bubble identifier="🦃" tooltip="" />
-              <Text fontSize="regular" color="text">Not sure where to begin on the BE.</Text>
+              <Text fontSize="regular" color="text">We used MediaPipe for face posing and 2D landmarking.</Text>
             </Flex>
             <Flex gap="2rem" align="center">
               <Bubble identifier="🦢" tooltip="" />
-              <Text fontSize="regular" color="text">Not sure where to begin on the FE.</Text>
+              <Text fontSize="regular" color="text">The model is then to be integrated to the chrome extension as an injected script.</Text>
             </Flex>
           </Flex>
         </Section>
