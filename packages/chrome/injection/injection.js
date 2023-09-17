@@ -36,9 +36,11 @@ function disable(sender) {
 //   console.log("received message: ", message);
 // });
 
-function handleMessage(message)  {
+function handleMessage(message, sender, response)  {
   console.log("received message: ", message);
 }
+
+chrome.runtime.onMessage.addListener(handleMessage);
 
 // const messageHandler = (message) => {
 //   if (message === "calibrate") {
