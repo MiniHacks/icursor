@@ -2,25 +2,21 @@ import { Flex, HStack, Heading, Text, VStack, SlideFade, useDisclosure } from "@
 import { useState, useRef, useEffect } from "react";
 
 const MainText = (): JSX.Element => {
-  // State to track whether the element is in view
   const [inView, setInView] = useState(false);
-  
-  // Ref for the element we want to observe
-  const boxRef = useRef<HTMLDivElement | null>(null); // Specify the type
+  const boxRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const options = {
-      root: null, // Use the viewport as the root
-      rootMargin: "0px", // No margin
-      threshold: 0.5, // When 50% of the element is visible
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
     };
 
-    // Create an Intersection Observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setInView(true);
-          // Stop observing once it's in view
+
           if (boxRef.current) {
             observer.unobserve(boxRef.current);
           }
@@ -28,12 +24,10 @@ const MainText = (): JSX.Element => {
       });
     }, options);
 
-    // Start observing the element
     if (boxRef.current) {
       observer.observe(boxRef.current);
     }
 
-    // Clean up the observer when the component unmounts
     return () => {
       observer.disconnect();
     };
@@ -45,7 +39,7 @@ const MainText = (): JSX.Element => {
 			align="center"
 			direction="column"
 		>
-			<VStack m="40px" maxW="60%" textAlign="center">
+			<VStack m="40px" maxW="60%" textAlign="center" gap="24px">
 				<SlideFade in={inView} offsetY={30} delay={0.5}>
 					<HStack ref={boxRef}>
 						<Heading fontSize="heading" marginRight="0.75rem">What Does it </Heading>
@@ -64,8 +58,8 @@ const MainText = (): JSX.Element => {
 						fontSize="regular"
 						color="text"
 					>
-						Insert an interesting description here. 
-						We do so many cool things. This is a description. This is a description.
+						This bad boy can fit so many face landmarks so that you can move freely with less clicks.
+						Scroll with your nose; move with your eyes. Procrastinate like never before!
 					</Text>
 				</SlideFade>
 			</VStack>
