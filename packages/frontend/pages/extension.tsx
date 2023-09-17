@@ -9,7 +9,6 @@ const Home: NextPage = () => {
         // inference on the frontend? suffer
         const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
         const response = await chrome.tabs.sendMessage(tab.id || 0, message);
-
     }
 
     return (
