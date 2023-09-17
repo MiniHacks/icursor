@@ -1,17 +1,29 @@
 console.log("injection.js loaded");
 
-function calibrate(sender) {
-  console.log("calibrate shit")
-  // chrome.scripting.executeScript({
-  //   target: { tabId: sender.tab.id },
-  //   function: () => {
-  //     const script = document.createElement('script');
-  //     script.src = chrome.runtime.getURL('webgazer.min.js');
-  //     document.head.appendChild(script);
+function calibrate(tabId) {
+  window.onscroll = function () { window.scrollTo(0, 0); };
+  const overlayDiv1 = document.createElement("div");
+  overlayDiv1.className = "overlay-div";
+  document.body.appendChild(overlayDiv1);
 
-  //     // webgazer.begin() // starting point here
-  //   },
-  // });s
+  function createSquare(className) {
+    const square = document.createElement("div");
+    square.className = "corner-square " + className;
+    document.body.appendChild(square);
+  }
+
+  // Create squares in all four corners
+  createSquare("top-left");
+  createSquare("top-right");
+  createSquare("bottom-left");
+  createSquare("bottom-right");
+  createSquare("middle-top");
+  createSquare("middle-middle");
+  createSquare("middle-bottom");
+  createSquare("middle-left");
+  createSquare("middle-right");
+  
+  // window.onscroll = null; // RESETs SCROLLING
 }
 
 function enable(sender) {
@@ -42,6 +54,7 @@ function handleState(message)  {
 
 function handleCalibrate(message) {
   console.log("received message (ca): ", message);
+  calibrate(message.tabId);
 }
 
 // const messageHandler = (message) => {

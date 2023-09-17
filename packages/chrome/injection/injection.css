@@ -1,2 +1,67 @@
-* {
+.overlay-div {
+  position: absolute; /* Change to relative positioning for the main overlay divs */
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  z-index: 1; /* Lower z-index for the main overlay divs */
+}
+
+.corner-square {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  position: absolute;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.middle-top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+} 
+
+.middle-middle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.middle-bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.middle-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.middle-right {
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
 }
