@@ -11,7 +11,7 @@ const Feature = ({ image, title }: FeatureProps): JSX.Element => (
 		direction="column"
 		justify="center"
 		align="center"
-		border="2px solid rgba(255, 255, 255, 0.40)"
+		border="2px solid rgba(255, 255, 255, 0.2)"
 		borderRadius="16px"
 		bg="rgba(47, 47, 51, 0.2)"
 		backdropBlur="10px"

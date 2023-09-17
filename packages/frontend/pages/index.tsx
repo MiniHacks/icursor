@@ -85,11 +85,11 @@ const Home: NextPage = () => {
           >
             <Flex gap="2rem" align="center">
               <Bubble identifier="🦃" tooltip="" />
-              <Text fontSize="regular" color="text">Cool explanation here, snap effect.</Text>
+              <Text fontSize="regular" color="text">Not sure where to begin on the BE.</Text>
             </Flex>
             <Flex gap="2rem" align="center">
               <Bubble identifier="🦢" tooltip="" />
-              <Text fontSize="regular" color="text">Cool explanation here, snap effect.</Text>
+              <Text fontSize="regular" color="text">Not sure where to begin on the FE.</Text>
             </Flex>
           </Flex>
         </Section>

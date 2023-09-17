@@ -34,6 +34,7 @@ const CustomLink: React.FC<CustomLinkProps> = ({ href, children }) => {
 
 const Header = ({ logo }: HeaderProps): JSX.Element => (
 	<Flex marginBottom="94px">
+	<Link zIndex="100" href="/">
 	<Image       
 		position="absolute"
 		src={logo}
@@ -41,6 +42,7 @@ const Header = ({ logo }: HeaderProps): JSX.Element => (
 		alt="icursor logo"
 		mx="48px"
 	/>
+	</Link>
 	<Flex 
 		flex="1" 
 		justifyContent="flex-end"

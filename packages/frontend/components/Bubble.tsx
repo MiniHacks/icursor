@@ -21,6 +21,9 @@ const Bubble = ({ identifier, tooltop, ...props }: BubbleProps): JSX.Element => 
 		_hover={{
 			background: "rgba(47, 47, 51, 0.5)",
 			color: "button",
+			rotate: "-10deg",
+			translateX: 0,
+			scale: 0.96,
 		}}
 		{...props}
 	>
